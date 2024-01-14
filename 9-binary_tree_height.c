@@ -2,22 +2,17 @@
 /**
  * binary_tree_height - find binary tree height
  *
- * @node: binary tree
+ * @tree: binary tree
  *
  * Return: height of tree
  */
-size_t binary_tree_height(const binary_tree_t *node)
+size_t binary_tree_height(const binary_tree_t *tree)
 {
-	int lDepth;
-	int rDepth;
+	if (tree == NULL)
+		return 0;
 
-	if (node == NULL || (node->left == NULL && node->right == NULL))
-		return (-1);
-	lDepth = binary_tree_height(node->left);
-	rDepth = binary_tree_height(node->right);
+	size_t lHeight = binary_tree_height(tree->left);
+	size_t rHeight = binary_tree_height(tree->right);
 
-	if (lDepth > rDepth)
-		return (lDepth + 1);
-	else
-		return (rDepth + 1);
+	return (lHeight > rHeight ? lHeight : rHeight) + 1;
 }
