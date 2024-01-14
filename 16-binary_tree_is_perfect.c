@@ -43,7 +43,6 @@ int is_perfect(const binary_tree_t *tree, size_t level, size_t depth)
 /**
  * get_depth - Measures the depth of a node in a binary tree.
  * @tree: Pointer to the node to measure the depth.
- * @depth: Current depth.
  *
  * Return: Depth of the node, 0 if tree is NULL.
  */
